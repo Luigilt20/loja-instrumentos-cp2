@@ -1,0 +1,7 @@
+CHECKPOINT 2 - C# DEVELOPMENT - 3ESPR
+Projeto: Loja de Instrumentos Musicais
+
+Luigi Thiengo Pires - RM 560755
+
+Repositorio publico:
+https://github.com/Luigilt20/loja-instrumentos-cp2
