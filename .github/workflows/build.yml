@@ -1,0 +1,23 @@
+name: .NET Windows
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet build LojaInstrumentos.csproj --configuration Release
+      - run: dotnet publish LojaInstrumentos.csproj --configuration Release --runtime win-x64 --self-contained true --output publish
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LojaInstrumentos-Windows-x64
+          path: publish/
